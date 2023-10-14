@@ -1,12 +1,16 @@
-export const ProductCard = ({ product }) => {
+import style from "./card.module.scss"
+
+export const ProductCard = ({ product, addToCart, cartList }) => {
     return(
-        <li>
+        <li key={cartList.id} className={style.card}>
+            <div className={style.img__container}>
             <img src={product.img} alt={product.name} />
-            <div>
+            </div>
+            <div className={style.info__container}>
                 <h3>{product.name}</h3>
-                <span>{product.category}</span>
-                <span>{product.price.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
-                <button>Adicionar</button>
+                <span className={style.category}>{product.category}</span>
+                <span className={style.price}>{product.price.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
+                <button className={style.btn} onClick={() => addToCart(cartList)}>Adicionar</button>
             </div>
         </li>
     )
