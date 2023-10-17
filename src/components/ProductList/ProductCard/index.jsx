@@ -2,7 +2,7 @@ import style from "./card.module.scss"
 
 export const ProductCard = ({ product, addToCart, cartList }) => {
     return(
-        <li key={cartList.id} className={style.card}>
+        <li key={product.id} className={style.card}>
             <div className={style.img__container}>
             <img src={product.img} alt={product.name} />
             </div>
