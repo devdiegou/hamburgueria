@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
-import { CartModal, Header, ProductList} from "../../components";
+import { CartModal, Header, ProductList } from "../../components";
 import { api } from "../../services/api";
+import { toast } from "react-toastify";
 
 export const HomePage = () => {
    const [isOpen, setIsOpen] = useState(false)
+   
    const localProduct = localStorage.getItem("@ProductList")
    const [productList, setProductList] = useState(localProduct ? JSON.parse(localProduct) : []);
-   const [cartList, setCartList] = useState([]);
-   // console.log(productList);
+   
+   const localCart = localStorage.getItem("@CartList")
+   const [cartList, setCartList] = useState(localCart ? JSON.parse(localCart) : []);
 
    useEffect(() => {
       const getProducts = async () => {
@@ -15,7 +18,7 @@ export const HomePage = () => {
             const { data } = await api.get("products");
             setProductList(data)
          } catch (error) {
-            alert(error);
+            toast.error(error);
          }
       }
       getProducts();
@@ -25,34 +28,43 @@ export const HomePage = () => {
       localStorage.setItem("@ProductList", JSON.stringify(productList))
    }, [productList])
 
+   useEffect(() => {
+      localStorage.setItem("@CartList", JSON.stringify(cartList))
+   }, [cartList])
+
    const removeItem = (itemId) => {
       const newItem = cartList.filter(item => item.id !== itemId);
       setCartList(newItem)
    }
 
-   const addToCart = (item) => {
-      if (!cartList.some(product => product.id === item.id)) {
-         setCartList(item);
+   const addToCart = (itemToAdd) => {
+      if(!cartList.some(item => item.id === itemToAdd.id)) {
+         setCartList([...cartList, itemToAdd])
       } else {
-         alert('Esse item já foi adicionado!')
+         toast.error("Este item já foi adicionado!")
       }
    }
 
-   // useEffect montagem - carrega os produtos da API e joga em productList; feito
-   // useEffect atualização - salva os produtos no localStorage (carregar no estado); fieto
-   // adição, exclusão, e exclusão geral do carrinho;
-   // renderizações condições e o estado para exibir ou não o carrinho;
-   // filtro de busca;
-   // estilizar tudo com sass de forma responsiva;
+   const removeAll = () => {
+      setCartList([])
+   }
 
    return (
       <>
-         <Header setIsOpen={setIsOpen} />
+         <Header setIsOpen={setIsOpen} toast={toast} cartList={cartList} />
          <main>
             <div className="container">
-               <ProductList productList={productList} cartList={cartList} addToCart={addToCart} />
-               {isOpen ? <CartModal setIsOpen={setIsOpen} cartList={cartList} removeItem={removeItem} /> : null}
-               
+               <ProductList
+                  productList={productList}
+                  cartList={cartList}
+                  addToCart={addToCart}
+                  setCartList={setCartList} />
+               {isOpen ? <CartModal
+                  setIsOpen={setIsOpen}
+                  cartList={cartList}
+                  setCartList={setCartList}
+                  removeAll={removeAll}
+                  removeItem={removeItem} /> : null}
             </div>
          </main>
       </>

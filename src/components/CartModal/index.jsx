@@ -2,7 +2,7 @@ import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
 import style from "./modal.module.scss"
 
-export const CartModal = ({ cartList, removeItem, setIsOpen }) => {
+export const CartModal = ({ cartList, removeItem, setIsOpen, removeAll, setCartList }) => {
    const total = cartList.reduce((prevValue, product) => {
       return prevValue + product.price;
    }, 0);
@@ -27,7 +27,7 @@ export const CartModal = ({ cartList, removeItem, setIsOpen }) => {
                <p>Total</p>
                <span className={style.price}>{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
             </div>
-            <button className={style.btn}>Remover todos</button>
+            <button className={style.btn} onClick={() => setCartList(removeAll)}>Remover todos</button>
          </div>
       </div>
    );

@@ -1,4 +1,4 @@
-ul {
+.ul {
   padding: 20px 50px;
   display: flex;
   flex-wrap: wrap;
@@ -7,7 +7,7 @@ ul {
 }
 
 @media (max-width: 768px) and (min-width: 426px){
-  ul {
+  .ul {
     padding: 20px 50px;
     display: flex;
     flex-wrap: wrap;
@@ -17,7 +17,7 @@ ul {
 }
 
 @media (max-width: 425px) {
-  ul {
+ .ul {
     display: flex;
     justify-content: flex-start;
     flex-wrap: nowrap;

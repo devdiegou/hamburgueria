@@ -15,17 +15,15 @@
     margin: 0 auto;
   }
 
-
   .logo {
     width: 158.937px;
     height: 36.827px;
   }
 
-
   .search__container {
     display: flex;
     position: relative;
-
+    
     .cart {
       background-color: var(--gray-0);
       cursor: pointer;
@@ -36,20 +34,24 @@
       font-family: 'Font Awesome 5 Free';
       font-size: var(--font-size-1);
       font-weight: 900;
-
     }
-
+    
     span {
+      width: 20px;
+      height: 24px;
       color: #fff;
+      background-color: var(--color-primary);
       font-family: var(--font-family);
       font-size: var(--font-size-4);
       font-weight: 900;
-      background-color: var(--color-primary);
       border-radius: 7px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: -10px;
+      top: -15px;
     }
-
   }
 }
 

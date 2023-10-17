@@ -42,7 +42,8 @@
     width: 100%;
     max-width: 484px;
     background-color: #fff;
-    height: 50px;
+    height: 50%;
+    overflow-y: auto; 
   }
 
   .total__div {
@@ -53,6 +54,7 @@
     flex-direction: column;
     padding: 0 20px;
     background-color: #fff;
+    border-top: 2px solid var(--gray-1);
     border-radius: 0 0 8px 8px;
 
     .btn {

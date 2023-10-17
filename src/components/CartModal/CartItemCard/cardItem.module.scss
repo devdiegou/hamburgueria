@@ -1,0 +1,57 @@
+.item {
+  width: 100%;
+  height: 70%;
+  padding: 20px 20px;
+  display: flex;
+  gap: 26px;
+  position: relative;
+
+  .delete__btn {
+    color: var(--Gray-4, #BDBDBD);
+    background-color: #fff;
+    font-family: 'Font Awesome 5 Free';
+    font-size: 18px;
+    font-weight: 900;
+    position: absolute;
+    top: 38px;
+    right: 23px;
+    cursor: pointer;
+  }
+
+  .info__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    h3 {
+      color: #333;
+      font-size: var(--font-size-2);
+      font-weight: 700;
+      line-height: 0;
+    }
+
+    p {
+      color: var(--color-primary);
+      font-size: var(--font-size-4);
+      font-weight: 600;
+      line-height: 24px;
+    }
+  }
+
+  .img__container {
+    width: 80px;
+    height: 80px;
+    background-color: var(--gray-1);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 60px;
+      height: 65px;
+    }
+  }
+}
