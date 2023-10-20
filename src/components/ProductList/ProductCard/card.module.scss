@@ -81,13 +81,19 @@
 
 @media (max-width: 1440px) {
   .card {
-    width: 38%
+    width: 31%
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: 31%
   }
 }
 
 @media (max-width: 425px) {
   .card {
-    width: 54%;
+    width: 70%;
     height: 373px;
 
     .info__container {

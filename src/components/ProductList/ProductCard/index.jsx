@@ -14,5 +14,5 @@ export const ProductCard = ({ product, addToCart }) => {
                 <button className={style.btn} onClick={() => addToCart(product)}>Adicionar</button>
             </div>
         </li>
-    )
-}
+    );
+};
