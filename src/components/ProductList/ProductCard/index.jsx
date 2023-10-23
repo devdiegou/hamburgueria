@@ -1,4 +1,4 @@
-import style from "./card.module.scss"
+import style from "./card.module.scss";
 
 export const ProductCard = ({ product, addToCart }) => {
 

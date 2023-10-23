@@ -1,6 +1,6 @@
 import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
-import style from "./modal.module.scss"
+import style from "./modal.module.scss";
 
 export const CartModal = ({ cartList, removeItem, setIsOpen, removeAll, setCartList }) => {
    const total = cartList.reduce((prevValue, product) => {

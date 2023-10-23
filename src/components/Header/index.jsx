@@ -2,7 +2,7 @@ import { useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import "../../globalStyles.css";
-import style from "./header.module.scss"
+import style from "./header.module.scss";
 import { toast } from "react-toastify";
 
 export const Header = ({ setIsOpen, cartList }) => {

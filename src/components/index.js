@@ -1,4 +1,4 @@
-import { Header } from "./Header"
+import { Header } from "./Header";
 import { CartModal } from "./CartModal";
 import { CartItemCard } from "./CartModal/CartItemCard";
 import { ProductCard } from "./ProductList/ProductCard";

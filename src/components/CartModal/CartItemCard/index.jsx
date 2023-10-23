@@ -1,5 +1,5 @@
 import { MdDelete } from "react-icons/md";
-import style from "./cardItem.module.scss"
+import style from "./cardItem.module.scss";
 
 export const CartItemCard = ({ product, removeItem }) => {
    return (
