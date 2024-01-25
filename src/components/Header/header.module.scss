@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
 .header {
   background-color: var(--gray-0);
   width: 100%;
@@ -16,8 +18,9 @@
   }
 
   .logo {
-    width: 158.937px;
-    height: 36.827px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: var(--font-size-1);
   }
 
   .search__container {

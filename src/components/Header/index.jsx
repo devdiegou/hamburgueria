@@ -10,7 +10,7 @@ export const Header = ({ setIsOpen, cartList }) => {
       <>
          <header className={style.header}>
             <div className={style.header__container}>
-               <img className={style.logo} src={Logo} alt="Logo Kenzie Burguer" />
+               <h2 className={style.logo}>Code Burguer</h2>
                <div className={style.search__container}>
                   <button className={style.cart} onClick={() => setIsOpen(true)} >
                      <MdShoppingCart className={style.cart__img} size={21} />
