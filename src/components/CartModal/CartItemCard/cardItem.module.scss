@@ -16,6 +16,12 @@
     top: 38px;
     right: 23px;
     cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+
+  .delete__btn:hover {
+    color: red;
+    transform: scale(1.05);
   }
 
   .info__container {

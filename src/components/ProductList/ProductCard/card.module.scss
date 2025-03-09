@@ -4,6 +4,7 @@
   border: 2px solid var(--gray-1);
   border-radius: 20px;
   background-color: #fff;
+  transition: border 0.3s ease, transform 0.2s ease;
 
 
   .img__container {
@@ -60,17 +61,20 @@
       font-size: var(--font-size-4);
       font-weight: 600;
       cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .btn:hover {
       border: 2px solid var(--color-primary);
       background-color: var(--color-primary);
+      transform: scale(1.05)
     }
   }
 }
 
 .card:hover {
   border: 2px solid var(--color-primary);
+  transform: scale(1.05);
 }
 
 @media (max-width: 1820px) {
